@@ -3,6 +3,7 @@ Enhance User Experience by adding visual highlights to selected answers
 Hint: You can use the className attribute for highlighting*/
 .selected {
     cursor: pointer; /* Change cursor on hover for interactivity */
+    background-color: #696969; /* Light blue background for selected answer */
   }
   
   /* Additional styling for better user experience */
