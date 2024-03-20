@@ -89,16 +89,17 @@ const Quiz = () => {
   };
 
   const handleSubmit = () => {
-    setIsSubmitted(true);
+    if (selectedAnswer) {
+      quizCore.answerQuestion(selectedAnswer);
+      setIsSubmitted(true);
+    }
   };
 
   const handleButtonClick = () => {
     if (!selectedAnswer) return;
     quizCore.answerQuestion(selectedAnswer);
-    if (quizCore.hasNextQuestion()) {
-      quizCore.nextQuestion();
-      setSelectedAnswer(null);
-    }
+    quizCore.nextQuestion();
+    setSelectedAnswer(null);
   };
 
   if (isSubmitted) {
